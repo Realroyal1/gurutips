@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guru Tips | Home of Daily Win</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --primary: #ffcc00; --bg: #000000; --card: #111111; --text: #ffffff; }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+        h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
+
+        header {
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #000;
+            border-bottom: 3px solid var(--primary);
+            position: sticky; top: 0; z-index: 1000;
+        }
+        .logo-img { height: 50px; }
+        
+        /* Navigation Links */
+        <nav>
+    <a href="index.html" style="color: var(--primary);">Tips</a>
+    <a href="results.html" style="color: #fff;">Results</a>
+</nav>
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 0.85rem; 
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .live-link {
+            background: rgba(255, 0, 0, 0.1);
+            color: var(--primary);
+            padding: 6px 12px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.8rem;
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .hero {
+            padding: 60px 8%;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200');
+            background-size: cover;
+        }
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); color: var(--primary); }
+
+        .sure-odds-cta {
+            background: var(--primary);
+            color: #000;
+            padding: 20px;
+            text-align: center;
+            font-weight: 800;
+            text-decoration: none;
+            display: block;
+            font-size: 1.5rem;
+            font-family: 'Oswald';
+            transition: 0.3s;
+        }
+
+        .prediction-container {
+            padding: 40px 8%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .category-box { background: var(--card); border-radius: 15px; overflow: hidden; border: 1px solid #222; }
+        .cat-header {
+            background: #222;
+            color: var(--primary);
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--primary);
+        }
+        .design-img { width: 100%; display: block; height: auto; }
+
+        .social-section { padding: 60px 8%; text-align: center; background: #0a0a0a; }
+        .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; max-width: 1000px; margin: 30px auto; }
+        .social-card { background: var(--card); padding: 15px; border-radius: 10px; text-decoration: none; color: #fff; border: 1px solid #333; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .social-card:hover { background: var(--primary); color: #000; }
+
+        footer { padding: 40px 8%; text-align: center; border-top: 1px solid #222; font-size: 0.8rem; color: #666; }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="logo.png" alt="GURU TIPS" class="logo-img">
+    <nav>
+        <!-- NAVIGATION LINKS -->
+        <a href="guru.html" style="color: var(--primary);">Tips</a>
+        <a href="results.html" style="color: #ffffff;">Results</a>
+    </nav>
+    <a href="https://t.me/+lTg0mfrP2JQyYzI0" class="live-link">
+        <i class="fas fa-circle" style="color: red; animation: pulse 1.5s infinite;"></i> LIVE
+    </a>
+</header>
+
+<section class="hero">
+    <h1>GURU TIPS</h1>
+    <p>HOME OF DAILY WIN</p>
+</section>
+
+<a href="https://t.me/+lTg0mfrP2JQyYzI0" class="sure-odds-cta">
+    <i class="fas fa-fire"></i> CLICK FOR SURE ODDS TODAY <i class="fas fa-fire"></i>
+</a>
+
+<div class="prediction-container">
+    <div class="category-box">
+        <div class="cat-header"><h3>DAILY TIPS</h3><i class="fas fa-calendar-check"></i></div>
+        <img src="daily-tips.jpg" alt="Daily Tips" class="design-img">
+    </div>
+
+    <div class="category-box">
+        <div class="cat-header"><h3>PREMIER LEAGUE</h3><i class="fas fa-trophy"></i></div>
+        <img src="premier-league.jpg" alt="Premier League" class="design-img">
+    </div>
+
+    <div class="category-box">
+        <div class="cat-header"><h3>OVER/UNDER</h3><i class="fas fa-futbol"></i></div>
+        <img src="over-under.jpg" alt="Over Under" class="design-img">
+    </div>
+
+    <div class="category-box">
+        <div class="cat-header" style="background: var(--primary); color: #000;"><h3>WEEKEND LONG SHOT</h3><i class="fas fa-rocket"></i></div>
+        <img src="long-shot.jpg" alt="Long Shot" class="design-img">
+    </div>
+</div>
+
+<section class="social-section">
+    <h2>CONNECT WITH THE COMMUNITY</h2>
+    <div class="social-grid">
+        <a href="https://t.me/+lTg0mfrP2JQyYzI0" class="social-card"><i class="fab fa-telegram-plane"></i> Telegram</a>
+        <a href="https://whatsapp.com/channel/0029VaHpdfz8KMqmKHqUOY1P" class="social-card"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="https://x.com/gurutips151728?s=21" class="social-card"><i class="fab fa-x-twitter"></i> Twitter</a>
+        <a href="https://www.facebook.com/Lennoxlexis" class="social-card"><i class="fab fa-facebook-f"></i> Facebook</a>
+    </div>
+</section>
+
+<footer>
+    <p>GURU TIPS | 18+ RESPONSIBLE GAMBLING</p>
+    <p>© 2026 Designed by Stephen Olawale</p>
+</footer>
+
+</body>
+</html>

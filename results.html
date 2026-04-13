@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guru Tips | Results Board</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --primary: #ffcc00; --bg: #000000; --card: #111111; --text: #ffffff; --win: #00ff66; }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); }
+        h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
+
+        header {
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #000;
+            border-bottom: 3px solid var(--primary);
+            position: sticky; top: 0; z-index: 1000;
+        }
+        .logo-img { height: 50px; }
+        nav { display: flex; gap: 20px; }
+        nav a { text-decoration: none; font-weight: bold; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; }
+
+        .hero { padding: 40px 8%; text-align: center; background: #111; }
+        .hero h1 { font-size: 3rem; color: var(--win); }
+
+        .results-container {
+            padding: 40px 8%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1400px; margin: 0 auto;
+        }
+
+        .result-box { background: var(--card); border-radius: 15px; overflow: hidden; border: 2px solid #222; }
+        .res-header { background: #222; color: var(--win); padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--win); }
+        .res-img { width: 100%; display: block; }
+        .win-tag { background: var(--win); color: #000; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 900; }
+
+        footer { padding: 40px 8%; text-align: center; color: #555; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="logo.png" alt="GURU TIPS" class="logo-img">
+    <nav>
+        <!-- NAVIGATION LINKS -->
+        <nav>
+    <a href="index.html" style="color: #fff;">Tips</a>
+    <a href="results.html" style="color: var(--primary);">Results</a>
+</nav>
+</header>
+
+<section class="hero">
+    <h1>WINNING BOARD</h1>
+    <p style="color: #666; letter-spacing: 2px;">PROOF OF OUR ACCURACY</p>
+</section>
+
+<div class="results-container">
+    <div class="result-box">
+        <div class="res-header"><h3>DAILY TIPS RESULT</h3><span class="win-tag">WON</span></div>
+        <img src="res-daily.jpg" alt="Daily Result" class="res-img">
+    </div>
+
+    <div class="result-box">
+        <div class="res-header"><h3>EPL RESULT</h3><span class="win-tag">WON</span></div>
+        <img src="res-premier.jpg" alt="EPL Result" class="res-img">
+    </div>
+
+    <div class="result-box">
+        <div class="res-header"><h3>OVER/UNDER RESULT</h3><span class="win-tag">WON</span></div>
+        <img src="res-over-under.jpg" alt="Over Under Result" class="res-img">
+    </div>
+
+    <div class="result-box" style="border-color: var(--win);">
+        <div class="res-header" style="background: var(--win); color: #000;"><h3>LONG SHOT RESULT</h3><span class="win-tag" style="background:#000; color:#fff;">BOOM!</span></div>
+        <img src="res-longshot.jpg" alt="Longshot Result" class="res-img">
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 GURU TIPS | Designed by Stephen Olawale</p>
+</footer>
+
+</body>
+</html>
