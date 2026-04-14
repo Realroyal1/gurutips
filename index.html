@@ -4,14 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guru Tips | Home of Daily Win</title>
+    
+    <!-- Favicon & Mobile App Meta -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
         :root { --primary: #ffcc00; --bg: #000000; --card: #111111; --text: #ffffff; }
+        
         * { margin:0; padding:0; box-sizing:border-box; }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: var(--bg); 
+            color: var(--text); 
+            overflow-x: hidden; 
+            padding-bottom: 70px; /* Space for mobile nav */
+        }
+
         h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
 
+        /* Header */
         header {
             padding: 15px 8%;
             display: flex;
@@ -19,21 +36,26 @@
             align-items: center;
             background: #000;
             border-bottom: 3px solid var(--primary);
-            position: sticky; top: 0; z-index: 1000;
+            position: sticky; 
+            top: 0; 
+            z-index: 1000;
         }
+
         .logo-img { height: 50px; }
+
+        nav { display: flex; gap: 20px; }
         
-        /* Navigation Links */
-        <nav>
-    <a href="index.html" style="color: var(--primary);">Tips</a>
-    <a href="results.html" style="color: #fff;">Results</a>
-</nav>
+        nav a { 
             text-decoration: none; 
             font-weight: bold; 
             font-size: 0.85rem; 
             letter-spacing: 1px;
             text-transform: uppercase;
+            color: #fff;
+            transition: 0.3s;
         }
+
+        nav a:hover { color: var(--primary); }
 
         .live-link {
             background: rgba(255, 0, 0, 0.1);
@@ -49,6 +71,7 @@
             gap: 5px;
         }
 
+        /* Hero */
         .hero {
             padding: 60px 8%;
             text-align: center;
@@ -57,6 +80,7 @@
         }
         .hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); color: var(--primary); }
 
+        /* CTA Bar */
         .sure-odds-cta {
             background: var(--primary);
             color: #000;
@@ -70,6 +94,7 @@
             transition: 0.3s;
         }
 
+        /* Grid */
         .prediction-container {
             padding: 40px 8%;
             display: grid;
@@ -80,6 +105,7 @@
         }
 
         .category-box { background: var(--card); border-radius: 15px; overflow: hidden; border: 1px solid #222; }
+        
         .cat-header {
             background: #222;
             color: var(--primary);
@@ -89,14 +115,54 @@
             align-items: center;
             border-bottom: 2px solid var(--primary);
         }
+
         .design-img { width: 100%; display: block; height: auto; }
 
+        /* Socials */
         .social-section { padding: 60px 8%; text-align: center; background: #0a0a0a; }
         .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; max-width: 1000px; margin: 30px auto; }
-        .social-card { background: var(--card); padding: 15px; border-radius: 10px; text-decoration: none; color: #fff; border: 1px solid #333; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .social-card { background: var(--card); padding: 15px; border-radius: 10px; text-decoration: none; color: #fff; border: 1px solid #333; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.3s; }
         .social-card:hover { background: var(--primary); color: #000; }
 
-        footer { padding: 40px 8%; text-align: center; border-top: 1px solid #222; font-size: 0.8rem; color: #666; }
+        /* Bottom Nav (App Style) */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #111;
+            display: none; /* Hidden on Desktop */
+            justify-content: space-around;
+            padding: 12px 0;
+            border-top: 2px solid var(--primary);
+            z-index: 2000;
+        }
+
+        .nav-item {
+            color: #888;
+            text-decoration: none;
+            text-align: center;
+            font-size: 0.7rem;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .nav-item i { font-size: 1.2rem; }
+        .nav-item.active { color: var(--primary); }
+
+        footer { padding: 40px 8% 100px; text-align: center; border-top: 1px solid #222; font-size: 0.8rem; color: #666; }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            header nav, .live-link { display: none; }
+            header { justify-content: center; }
+            .bottom-nav { display: flex; }
+            .hero { padding: 40px 5%; }
+            .hero h1 { font-size: 2.2rem; }
+            .sure-odds-cta { font-size: 1.1rem; }
+        }
+
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
     </style>
 </head>
@@ -105,9 +171,8 @@
 <header>
     <img src="logo.png" alt="GURU TIPS" class="logo-img">
     <nav>
-        <!-- NAVIGATION LINKS -->
-        <a href="guru.html" style="color: var(--primary);">Tips</a>
-        <a href="results.html" style="color: #ffffff;">Results</a>
+        <a href="index.html" style="color: var(--primary);">Tips</a>
+        <a href="results.html">Results</a>
     </nav>
     <a href="https://t.me/+lTg0mfrP2JQyYzI0" class="live-link">
         <i class="fas fa-circle" style="color: red; animation: pulse 1.5s infinite;"></i> LIVE
@@ -156,12 +221,32 @@
 </section>
 
 <footer>
-   <p style="margin-top: 15px;">© 2026 GURU TIPS | Designed by 
+   <p>© 2026 GURU TIPS | Designed by 
    <a href="https://realroyal1.github.io/portfolio/" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: bold;">
       Stephen Olawale
    </a>
 </p>
 </footer>
+
+<!-- Mobile Bottom App Bar -->
+<div class="bottom-nav">
+    <a href="index.html" class="nav-item active">
+        <i class="fas fa-home"></i>
+        <span>Tips</span>
+    </a>
+    <a href="results.html" class="nav-item">
+        <i class="fas fa-check-circle"></i>
+        <span>Results</span>
+    </a>
+    <a href="https://t.me/+lTg0mfrP2JQyYzI0" class="nav-item">
+        <i class="fab fa-telegram-plane"></i>
+        <span>Join VIP</span>
+    </a>
+    <a href="https://whatsapp.com/channel/0029VaHpdfz8KMqmKHqUOY1P" class="nav-item">
+        <i class="fab fa-whatsapp"></i>
+        <span>Channel</span>
+    </a>
+</div>
 
 </body>
 </html>

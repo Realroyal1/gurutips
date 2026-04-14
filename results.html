@@ -4,14 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guru Tips | Results Board</title>
+    
+    <!-- Favicon & Mobile App Meta -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
-        :root { --primary: #ffcc00; --bg: #000000; --card: #111111; --text: #ffffff; --win: #00ff66; }
+        :root { 
+            --primary: #ffcc00; 
+            --bg: #000000; 
+            --card: #111111; 
+            --text: #ffffff; 
+            --win: #00ff66; 
+        }
+        
         * { margin:0; padding:0; box-sizing:border-box; }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); }
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: var(--bg); 
+            color: var(--text); 
+            overflow-x: hidden; 
+            padding-bottom: 80px; /* Space for bottom nav */
+        }
+
         h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
 
+        /* Header */
         header {
             padding: 15px 8%;
             display: flex;
@@ -19,29 +42,109 @@
             align-items: center;
             background: #000;
             border-bottom: 3px solid var(--primary);
-            position: sticky; top: 0; z-index: 1000;
+            position: sticky; 
+            top: 0; 
+            z-index: 1000;
         }
+
         .logo-img { height: 50px; }
+
         nav { display: flex; gap: 20px; }
-        nav a { text-decoration: none; font-weight: bold; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; }
+        
+        nav a { 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 0.85rem; 
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #fff;
+            transition: 0.3s;
+        }
 
-        .hero { padding: 40px 8%; text-align: center; background: #111; }
-        .hero h1 { font-size: 3rem; color: var(--win); }
+        /* Hero */
+        .hero { 
+            padding: 40px 8%; 
+            text-align: center; 
+            background: #111; 
+            border-bottom: 1px solid #222;
+        }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3rem); color: var(--win); }
 
+        /* Results Grid */
         .results-container {
             padding: 40px 8%;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
-            max-width: 1400px; margin: 0 auto;
+            max-width: 1400px; 
+            margin: 0 auto;
         }
 
-        .result-box { background: var(--card); border-radius: 15px; overflow: hidden; border: 2px solid #222; }
-        .res-header { background: #222; color: var(--win); padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--win); }
-        .res-img { width: 100%; display: block; }
-        .win-tag { background: var(--win); color: #000; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 900; }
+        .result-box { 
+            background: var(--card); 
+            border-radius: 15px; 
+            overflow: hidden; 
+            border: 2px solid #222; 
+        }
 
-        footer { padding: 40px 8%; text-align: center; color: #555; font-size: 0.8rem; }
+        .res-header { 
+            background: #222; 
+            color: var(--win); 
+            padding: 12px 20px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-bottom: 2px solid var(--win); 
+        }
+
+        .res-img { width: 100%; display: block; height: auto; }
+
+        .win-tag { 
+            background: var(--win); 
+            color: #000; 
+            padding: 2px 8px; 
+            border-radius: 4px; 
+            font-size: 0.7rem; 
+            font-weight: 900; 
+        }
+
+        /* Bottom Nav (App Style) */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #111;
+            display: none; /* Hidden on Desktop */
+            justify-content: space-around;
+            padding: 12px 0;
+            border-top: 2px solid var(--primary);
+            z-index: 2000;
+        }
+
+        .nav-item {
+            color: #888;
+            text-decoration: none;
+            text-align: center;
+            font-size: 0.7rem;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .nav-item i { font-size: 1.2rem; }
+        .nav-item.active { color: var(--primary); }
+
+        footer { padding: 40px 8% 100px; text-align: center; border-top: 1px solid #222; font-size: 0.8rem; color: #666; }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            header nav { display: none; }
+            header { justify-content: center; }
+            .bottom-nav { display: flex; }
+            .hero { padding: 30px 5%; }
+            .results-container { padding: 20px 5%; }
+        }
     </style>
 </head>
 <body>
@@ -49,16 +152,14 @@
 <header>
     <img src="logo.png" alt="GURU TIPS" class="logo-img">
     <nav>
-        <!-- NAVIGATION LINKS -->
-        <nav>
-    <a href="index.html" style="color: #fff;">Tips</a>
-    <a href="results.html" style="color: var(--primary);">Results</a>
-</nav>
+        <a href="index.html">Tips</a>
+        <a href="results.html" style="color: var(--primary);">Results</a>
+    </nav>
 </header>
 
 <section class="hero">
     <h1>WINNING BOARD</h1>
-    <p style="color: #666; letter-spacing: 2px;">PROOF OF OUR ACCURACY</p>
+    <p style="color: #666; letter-spacing: 2px; font-weight: bold;">PROOF OF OUR ACCURACY</p>
 </section>
 
 <div class="results-container">
@@ -84,12 +185,32 @@
 </div>
 
 <footer>
-   <p style="margin-top: 15px;">© 2026 GURU TIPS | Designed by 
+   <p>© 2026 GURU TIPS | Designed by 
    <a href="https://realroyal1.github.io/portfolio/" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: bold;">
       Stephen Olawale
    </a>
 </p>
 </footer>
+
+<!-- Mobile Bottom App Bar -->
+<div class="bottom-nav">
+    <a href="index.html" class="nav-item">
+        <i class="fas fa-home"></i>
+        <span>Tips</span>
+    </a>
+    <a href="results.html" class="nav-item active">
+        <i class="fas fa-check-circle"></i>
+        <span>Results</span>
+    </a>
+    <a href="https://t.me/+lTg0mfrP2JQyYzI0" class="nav-item">
+        <i class="fab fa-telegram-plane"></i>
+        <span>Join VIP</span>
+    </a>
+    <a href="https://whatsapp.com/channel/0029VaHpdfz8KMqmKHqUOY1P" class="nav-item">
+        <i class="fab fa-whatsapp"></i>
+        <span>Channel</span>
+    </a>
+</div>
 
 </body>
 </html>
