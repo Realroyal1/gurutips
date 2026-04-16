@@ -3,8 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guru Tips | Home of Daily Win</title>
     
+    <!-- SEO & GOOGLE SEARCH -->
+    <title>Official Guru Tips | Home of Daily Winning Predictions</title>
+    <meta name="description" content="Get the most accurate daily football predictions, Premier League tips, and over/under 2.5 goals at Official Guru Tips. Your home for professional sport analysis.">
+    <meta name="keywords" content="football predictions, betting tips, guru tips, official guru tips, daily banker, over 2.5 predictions, sport prediction nigeria">
+    
+    <!-- SOCIAL MEDIA PREVIEW (WhatsApp/Facebook) -->
+    <meta property="og:title" content="Official Guru Tips | Home of Daily Win">
+    <meta property="og:description" content="Professional sport predictions and high-accuracy daily tips.">
+    <meta property="og:image" content="favicon.png">
+    <meta property="og:url" content="https://www.officialgurutips.com">
+
     <!-- Favicon & Mobile App Meta -->
     <link rel="icon" type="image/png" href="favicon.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -23,7 +33,7 @@
             background: var(--bg); 
             color: var(--text); 
             overflow-x: hidden; 
-            padding-bottom: 70px; /* Space for mobile nav */
+            padding-bottom: 80px; /* Space for mobile nav */
         }
 
         h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
@@ -163,6 +173,17 @@
             .sure-odds-cta { font-size: 1.1rem; }
         }
 
+        /* Pulsing Glow for Live Bet icon */
+        .fa-bolt.glow {
+            animation: bolt-glow 1.5s infinite;
+        }
+
+        @keyframes bolt-glow {
+            0% { transform: scale(1); filter: drop-shadow(0 0 0px var(--primary)); }
+            50% { transform: scale(1.2); filter: drop-shadow(0 0 8px var(--primary)); }
+            100% { transform: scale(1); filter: drop-shadow(0 0 0px var(--primary)); }
+        }
+
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
     </style>
 </head>
@@ -180,33 +201,33 @@
 </header>
 
 <section class="hero">
-    <h1>GURU TIPS</h1>
+    <h1>OFFICIAL GURU TIPS</h1>
     <p>HOME OF DAILY WIN</p>
 </section>
 
 <a href="https://t.me/+lTg0mfrP2JQyYzI0" class="sure-odds-cta">
-    <i class="fas fa-fire"></i> CLICK FOR SURE ODDS TODAY <i class="fas fa-fire"></i>
+   <i class="fas fa-bolt"></i> CLICK FOR LIVE BETTING TIPS NOW <i class="fas fa-bolt"></i>
 </a>
 
 <div class="prediction-container">
     <div class="category-box">
         <div class="cat-header"><h3>DAILY TIPS</h3><i class="fas fa-calendar-check"></i></div>
-        <img src="daily-tips.jpg" alt="Daily Tips" class="design-img">
+        <img src="daily-tips.jpg" alt="Daily Prediction" class="design-img">
     </div>
 
     <div class="category-box">
         <div class="cat-header"><h3>PREMIER LEAGUE</h3><i class="fas fa-trophy"></i></div>
-        <img src="premier-league.jpg" alt="Premier League" class="design-img">
+        <img src="premier-league.jpg" alt="EPL Predictions" class="design-img">
     </div>
 
     <div class="category-box">
         <div class="cat-header"><h3>OVER/UNDER</h3><i class="fas fa-futbol"></i></div>
-        <img src="over-under.jpg" alt="Over Under" class="design-img">
+        <img src="over-under.jpg" alt="Goals Predictions" class="design-img">
     </div>
 
     <div class="category-box">
         <div class="cat-header" style="background: var(--primary); color: #000;"><h3>WEEKEND LONG SHOT</h3><i class="fas fa-rocket"></i></div>
-        <img src="long-shot.jpg" alt="Long Shot" class="design-img">
+        <img src="long-shot.jpg" alt="High Odds Ticket" class="design-img">
     </div>
 </div>
 
@@ -221,7 +242,7 @@
 </section>
 
 <footer>
-   <p>© 2026 GURU TIPS | Designed by 
+   <p>© 2026 OFFICIAL GURU TIPS | Designed by 
    <a href="https://realroyal1.github.io/portfolio/" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: bold;">
       Stephen Olawale
    </a>
@@ -239,7 +260,7 @@
         <span>Results</span>
     </a>
     <a href="https://t.me/+lTg0mfrP2JQyYzI0" class="nav-item">
-        <i class="fas fa-bolt" style="color: var(--primary);"></i>
+        <i class="fas fa-bolt glow" style="color: var(--primary);"></i>
         <span>Live Bet</span>
     </a>
     <a href="https://whatsapp.com/channel/0029VaHpdfz8KMqmKHqUOY1P" class="nav-item">
